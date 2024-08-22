@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>profile Page</h2>
+
+<div class="new-post-btn">
+  <a href="{% url 'new_post' %}">Add post</a>
+</div>
+<div>
+
+{% if user.is_authenticated %}
+<p>Hi {{ user.username }} </p>
+<form action="{% url 'logout' %}" method="post">
+{% csrf_token %}
+<button type="submit">logout</button>
+</form>
+</div>
+<!-- show posts when logged in -->
+{% if object_list %}
+{% for post in object_list %}
+<div class="post-entry">
+  <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }} </a></h2>
+</div>
+{% endfor %}
+{% else %}
+<div>
+  <p>you have no posts</p>
+</div>
+{% endif %}
+<!-- end of posts -->
+{% else %}
+<div>
+<p>You are not logged in</p>
+<button><a href="{% url 'login' %}">Login</a></button>
+{% endif %}
+
+{% endblock content %}

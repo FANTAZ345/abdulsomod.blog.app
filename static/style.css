@@ -1,0 +1,31 @@
+*{
+  box-sizing: border-box;
+  padding: 5px;
+}
+body{
+  background-color: rgb(36, 194, 205);
+  color: #000;
+}
+.title{
+  color: red;
+  font-size: larger;
+}
+.new-post-link{
+  background-color: white;
+  width: 10%;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-weight: bolder;
+}
+.new-post-link a{
+  color: #000;
+  text-decoration: none;
+}
+.h2 a{
+  font-size: 1.5rem;
+  text-decoration: none;
+  background-color: deepskyblue;
+  color: white;
+  padding: .5rem;
+  border-radius: 1rem;
+}
